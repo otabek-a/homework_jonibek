@@ -1,11 +1,18 @@
-# Function to get capitalized female names from a CSV string
+
+import csv
 def read_data(file_path):
   """
 read csv file from file_path and return list 
 
   """
+  file=open(file_path)
+  reader=csv.reader(file)
+  data=list(reader)
   return data
+
 data=read_data("people_info.csv")
+print(data)
+# Function to get capitalized female names from a CSV string
 def get_female_names_capitalized(data: str) -> list:
     pass
 
