@@ -1,13 +1,13 @@
 
-import csv
+
 def read_data(file_path):
   """
+  import csv
+  use reader 
 read csv file from file_path and return list 
-
+csv includes : 'First Name', 'Last Name', 'Middle Name', 'Gender', 'Occupation', 'Phone Number', 'Location (Country)'
   """
-  file=open(file_path)
-  reader=csv.reader(file)
-  data=list(reader)
+
   return data
 
 data=read_data("people_info.csv")
