@@ -2,6 +2,7 @@
 # test.py
 import pytest
 from main import (
+    read_data,
     get_female_names_capitalized,
     get_male_phone_info,
     get_occupations_starting_with_vowels,
@@ -14,14 +15,16 @@ from main import (
     get_reversed_first_names
 )
 
-sample_data = """
-First Name,Last Name,Middle Name,Gender,Occupation,Phone Number,Location (Country)
-alice,smith,a,Female,Engineer,+1-111-1111111,USA
-bob,jones,b,Male,Artist,+1-222-2222222,UK
-irene,white,c,Female,Illustrator,+1-333-3333333,Canada
-john,black,d,Male,Technician,+1-444-4444444,Germany
-peter,stone,e,Male,Analyst,+1-555-5555555,France
-"""
+sample_data = [
+    ["alice", "smith", "a", "Female", "Engineer", "+1-111-1111111", "USA"],
+    ["bob", "jones", "b", "Male", "Artist", "+1-222-2222222", "UK"],
+    ["irene", "white", "c", "Female", "Illustrator", "+1-333-3333333", "Canada"],
+    ["john", "black", "d", "Male", "Technician", "+1-444-4444444", "Germany"],
+    ["peter", "stone", "e", "Male", "Analyst", "+1-555-5555555", "France"]
+]
+
+
+
 
 def test_get_female_names_capitalized():
     assert get_female_names_capitalized(sample_data) == ['Alice', 'Irene']
